@@ -1,0 +1,20 @@
+1,Batman Arkham City,Rocksteady Studios,Action Adventure,2011,9.3,true
+2,Minecraft,Mojang,Sandbox,2011,9.5,false
+3,Portal 2,Valve,Puzzle,2011,9.6,true
+4,The Witcher 3,CD Projekt Red,RPG,2015,9.7,false
+5,Red Dead Redemption 2,Rockstar Games,Action Adventure,2018,9.8,true
+6,God of War,Santa Monica Studio,Action Adventure,2018,9.4,true
+7,Elden Ring,FromSoftware,RPG,2022,9.5,false
+8,Hades,Supergiant Games,Roguelike,2020,9.1,true
+9,Hollow Knight,Team Cherry,Metroidvania,2017,9.2,false
+10,Celeste,Maddy Makes Games,Platformer,2018,9.0,true
+11,Stardew Valley,ConcernedApe,Simulation,2016,9.3,false
+12,Undertale,tobyfox,RPG,2015,9.1,true
+13,DOOM Eternal,id Software,Shooter,2020,9.0,true
+14,Resident Evil 4,Capcom,Survival Horror,2005,9.5,true
+15,Final Fantasy VII,Square,RPG,1997,9.6,true
+16,Super Mario Odyssey,Nintendo,Platformer,2017,9.4,false
+17,The Legend of Zelda Breath of the Wild,Nintendo,Adventure,2017,9.7,true
+18,Mass Effect 2,BioWare,RPG,2010,9.4,true
+19,Cyberpunk 2077,CD Projekt Red,RPG,2020,8.8,false
+20,Persona 5,Atlus,RPG,2016,9.3,true
