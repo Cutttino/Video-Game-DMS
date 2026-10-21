@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
 
 public class Main {
     public static void main(String[] args) {
-
+// menu
 System.out.println("Welcome to the Video Game DMS!");
 System.out.println("\n == VIDEO GAME DMS ==");
 System.out.println("1. Load games from file");
@@ -18,11 +18,11 @@ System.out.println("4. Update Game ");
 System.out.println("5. Display Game");
 System.out.println("6. Calculate Average Rating");
 System.out.println("7. Exit Program");
-
+// Input for menu
 Scanner scanner = new Scanner(System.in);
 
 ArrayList<VideoGame> games =  new ArrayList<>();
-
+// while try and except
 while (true) {
     System.out.println("Enter menu inputs (1 - 7) " );
     try {
@@ -124,6 +124,7 @@ while (true) {
 
                 break;
             case 2:
+                // field to add games along with attributes  to Array list
                 System.out.println("Add game selected");
                 int gameID_input = 0;
                 while (true) {
@@ -235,6 +236,7 @@ while (true) {
 
                  break;
             case 3:
+                // Remove game from list
                 System.out.println("Remove game selected");
                 System.out.println("Enter Game ID to remove: ");
                 int removeId_input = scanner.nextInt();
@@ -248,6 +250,7 @@ while (true) {
 
                 break;
             case 4:
+                // update any filed in a game by entering the valid ID
                 System.out.println("Update game selected");
                 System.out.println("Enter Game ID to update: ");
                 int updateID_input = scanner.nextInt();
@@ -398,6 +401,7 @@ while (true) {
 
                 break;
             case 5:
+                // Display the game and it's attributes
                 System.out.println("Display game selected");
                 for (VideoGame game: games){
                     System.out.println("Game-Id: " + game.getGameID());
@@ -412,6 +416,7 @@ while (true) {
 
                 break;
             case 6:
+                // Calculate the average
                 System.out.println("Calculate average selected");
                 double totalRating = 0.0;
                 if (games.isEmpty()){
