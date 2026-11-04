@@ -29,8 +29,7 @@ public class VideoGameGUI extends JFrame {
    JPanel mainPanel = new JPanel();
    // Adding JPanel to Window
    this.add(mainPanel);
-   // Display window
-   this.setVisible(true);
+
    //JButton
    JButton button = new JButton("Add Game");
    // Adding JButton to Panel - Window
@@ -406,9 +405,11 @@ public class VideoGameGUI extends JFrame {
       exitButton.addActionListener(e -> {
           dispose();
       });
+      // Display window
+      this.setVisible(true);
   }
 public static void main(String[] args) {
 
 VideoGameGUI videoGameGUI = new VideoGameGUI();
     }
-} 
+
