@@ -1,25 +1,26 @@
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JButton;
-import javax.swing.JOptionPane;
-import javax.swing.JPasswordField;
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.util.InputMismatchException;
 import java.util.ArrayList;
-import javax.swing.JFileChooser;
 import java.io.File;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
+import  java.awt.BorderLayout;
 
-
+/**
+ * Allows the user to add, update, load or delete game records
+ */
 public class VideoGameGUI extends JFrame {
 
     private ArrayList<VideoGame> games = new ArrayList<>();
 
     private Connection conn;
-
+    /**
+     * Setups for the window include buttons titles and positioning. Each button allows you to either add delete or load data from the database.
+     */
   public VideoGameGUI() {
    // Setting the title of the Window
    this.setTitle("Video Game DMS");
@@ -59,9 +60,21 @@ public class VideoGameGUI extends JFrame {
    // JPanel Object
    JPanel mainPanel = new JPanel();
    // Adding JPanel to Window
-   this.add(mainPanel);
+   this.add(mainPanel,BorderLayout.NORTH);
+      // Input Categories
+      String[] Categories =  {"Game ID", "Title", "Developer", "Genre", "Release Year", "Public Rating", "Completed"};
+   // Table Model for data
+   DefaultTableModel mainTableModel = new DefaultTableModel(Categories,0);
 
-   //JButton
+    // JTable Object
+   JTable mainTable = new JTable(mainTableModel);
+
+ // JScroll Object
+   JScrollPane mainScroll = new JScrollPane(mainTable);
+//  Adding  JScrollPane to Window
+  this.add(mainScroll, BorderLayout.CENTER);
+
+      //JButton
    JButton button = new JButton("Add Game");
    // Adding JButton to Panel - Window
    mainPanel.add(button);
@@ -428,6 +441,11 @@ public class VideoGameGUI extends JFrame {
       // Display window
       this.setVisible(true);
   }
+    /**
+     * Launches the Video Game DMS GUI
+     * @param args command-line argument unused.
+     */
+
 public static void main(String[] args) {
 
 VideoGameGUI videoGameGUI = new VideoGameGUI();
