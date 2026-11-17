@@ -15,9 +15,20 @@ import java.sql.Statement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.sql.PreparedStatement;
+/**
+ * Provides a connection between SQL database and java logic and code to add delete and update
+ */
 
 public class DataBaseManager {
     // Making connection to MySQL
+    /**
+     * @param databaseUrl the database link
+     * @param username input needed to enter MySQL database
+     * @param password input needed to enter MySQL database
+     * @return the connection to the SQL database
+     *
+     * @throws SQLException a condition to check if database url is blank
+     */
     public static Connection connection(String databaseUrl, String username, String password) throws SQLException {
 
         //Make sure the database location is provided
@@ -28,6 +39,12 @@ public class DataBaseManager {
         return DriverManager.getConnection(databaseUrl, username, password);
 
     }
+    /**
+     * test for MySQL connection
+     * @param args I do not use command line arguments for this
+     *
+     *
+     */
 
     public static void main(String[] args) {
 
@@ -64,6 +81,15 @@ public class DataBaseManager {
     } // End of main
 
 
+    /**
+     * Loads all video games from database
+     * @param conn provides the connection to the MySQL database
+     * @return the list of video games within the database
+     *
+     * @throws SQLException a condition to check if the load fails
+     */
+
+
     // Retrieve all games from MySQL
     public static ArrayList<VideoGame> loadGames(Connection conn) throws SQLException {
 
@@ -89,6 +115,13 @@ public class DataBaseManager {
         return loadedGames;
     }
 
+    /**
+     * @param conn provides the connection to the MySQL database
+     * @param game is the input you insert for each game's data points
+     * @return is for the boolean to check if a row was inserted
+     *
+     * @throws SQLException a condition to for when the insert process fails and if the same game id is already on the database
+     */
     // Adding game to database
     public static boolean addGame(Connection conn, VideoGame game) throws SQLException{
 
@@ -110,6 +143,13 @@ public class DataBaseManager {
 
     }
 
+    /**
+     * @param conn provides the connection to the MySQL database
+     * @param gameID is the input that needs to be entered to delete a game
+     * @return is for the boolean to check if a row was deleted
+     *
+     * @throws SQLException a condition to for when the deletion process fails.
+     */
     // Removing game to database
     public static boolean removeGame(Connection conn, int gameID) throws SQLException{
         String sql = "DELETE FROM games WHERE game_id = ?";
@@ -122,7 +162,13 @@ public class DataBaseManager {
         }
     }
    // Update game to database
-
+    /**
+     * @param conn provides the connection to the MySQL database
+     * @param game is the input you insert for the update you want
+     * @return is for the boolean to check if a row was updated
+     *
+     * @throws SQLException a condition to for when the update process fails
+     */
     public static boolean updateGame(Connection conn, VideoGame game) throws SQLException{
 
         String sql = "UPDATE games SET title = ?, developer = ?, genre = ?, " + "release_year = ?, public_rating = ?, completed = ? " + "WHERE game_id = ?";
