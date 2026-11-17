@@ -1,12 +1,20 @@
 
-import java.awt.*;
+mport java.awt.*;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.File;
 import java.io.FileNotFoundException;
-
+/**
+ * Runs the console version of the Video Game DMS
+ *  methods for managing game data and calculating their average rating.
+ */
 public class Main {
+    /**
+     * Displays the console menu until the user chooses to exit.
+     *
+     * @param args  not being used
+     */
     public static void main(String[] args) {
 
 // Input for menu
@@ -474,6 +482,12 @@ public class Main {
         }
 
     }
+    /**
+     * Adds a game to the list if its ID is not already exist
+     * @param games the list to add the game to
+     * @param newGame the game to add
+     * @return true if the game was added, or false if the ID already exists
+     */
 
     public static boolean addGame(ArrayList<VideoGame> games, VideoGame newGame) {
         for (VideoGame game : games) {
@@ -485,6 +499,12 @@ public class Main {
         games.add(newGame);
         return true;
     }
+    /**
+     * Removes the game with the specific ID from the list.
+     * @param games the list to search
+     * @param gameID the ID of the game to remove
+     * @return true if a game was removed, or false if the ID was not found
+     */
 public static boolean removeGame(ArrayList<VideoGame> games, int gameID){
         for (int i = 0; i < games.size();i++){
             if(games.get(i).getGameID() == gameID){
@@ -494,6 +514,11 @@ public static boolean removeGame(ArrayList<VideoGame> games, int gameID){
         }
         return false;
  }
+    /**
+     * Calculates the average of the games public ratings.
+     * @param games the games whose ratings are included
+     * @return the average public rating, or 0.0 if the list is empty
+     */
 
 public static double calculateAverageRating(ArrayList<VideoGame> games){
         if (games.isEmpty()){
